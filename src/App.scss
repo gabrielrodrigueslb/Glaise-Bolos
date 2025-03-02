@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$colorPrimary: #fd8b8b;
+$colorSecondary: #814827;
+$colorWhite: #fff;
+$colorText: rgba(129, 72, 39, 0.75);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  color: $colorSecondary;
+}
+
+a{
+  text-decoration: none;
+  color: $colorPrimary;
+}
+
+p {
+  color: $colorText;
+}
+h1,
+h2 {
+  color: $colorSecondary;
+}
+span {
+  color: $colorPrimary;
+}
+
+ul, li {
+  list-style: none;
+}
+
+
+
+
+.container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.container-alt {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.background {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFBEB 100%);
+}
+.background2 {
+  background: linear-gradient(0deg, #FFFFFF 0%, #FFFBEB 100%);
+}
+.background-alt{
+  background: #814827;
+}
+
+.btn {
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $colorWhite;
+  box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 20%);
+  border-radius: 50%;
+  color: $colorPrimary;
+  cursor: pointer;
+  transition: 0.1s;
+  &:hover {
+    color: $colorWhite;
+    transition: 0.1s;
+    background: $colorPrimary;
+  }
+}
+.btn-2 {
+  padding: 14px 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $colorWhite;
+  box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 20%);
+  color: $colorPrimary;
+  cursor: pointer;
+  transition: 0.1s;
+  justify-self: center;
+  border: none;
+  font-weight: bold;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  border-radius:24px ;
+  margin-top: 31px;
+  &:hover {
+    color: $colorWhite;
+    transition: 0.1s;
+    background: $colorPrimary;
+  }
+}
+
+.title {
+  color: $colorSecondary;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  position: relative;
+  align-items: end;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $colorPrimary;
+    margin-bottom: 13px;
+    margin-left: 5px;
+  }
+}
+.title-alt {
+  color: $colorWhite;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  position: relative;
+  align-items: end;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $colorPrimary;
+    margin-bottom: 13px;
+    margin-left: 5px;
+  }
+}

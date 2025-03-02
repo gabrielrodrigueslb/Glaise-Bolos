@@ -1,0 +1,68 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 38px 35px;
+
+    .Logo-container{
+        display: flex;
+        width: 77px;
+        height: 77px;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .nav-menu{
+        display: flex;
+
+        .menu{
+            display: flex;
+            align-items: center;
+            gap: 57px;
+            li{
+                list-style: none;
+                font-weight: bold;
+                color: #FD8B8B;
+                cursor: pointer;
+                padding: 5px 0;
+                font-size: 1.125rem;
+                overflow-x: hidden;
+                
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 3px;
+                    background: #FD8B8B;
+                    opacity: 0;
+                    transition: width 0.3s;
+                    
+                }
+
+                &:hover::after{
+                    opacity: 1;
+                    width: 100%;
+                    animation: fadeIn 0.2s linear;
+                }
+            }
+        }
+        
+    }
+
+    .search{
+        font-size: 1.25rem;
+        
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translatex(-100px);
+    }
+    to {
+        transform: translatex(0px);
+    }
+}
