@@ -1,19 +1,29 @@
-import { FaWhatsapp, FaInstagram, FaPhoneAlt } from "react-icons/fa";
-
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+} from 'react-icons/fa';
 
 import Header from '../components/Header/Header';
 import Carrosel from '../components/Carrossel/Carrosel';
 import Servicos from '../components/Servicos/Servicos';
 
 import './Home.scss';
+import CarroselMobile from '../components/CarrosselMobile/CarroselMobile';
 
 export default function Home() {
   return (
     <>
       <main className="background main">
-        <div className="container">
           <Header />
-          <Carrosel />
+          <div className='container'>
+
+
+          <Carrosel className="container"/>
+          </div>
+          <CarroselMobile/>
+        <div className="container">
 
           <section className="services-list">
             <Servicos
@@ -55,7 +65,7 @@ export default function Home() {
         </div>
       </main>
 
-      <section className="about background-alt">
+      <section className="about background-alt" id='about'>
         <div className="container-alt about-content">
           <h2 className="title-alt">Sobre nós</h2>
 
@@ -85,18 +95,68 @@ export default function Home() {
         </div>
       </section>
 
-        <section className="contact background2" id="contato">
-            <div className="container-alt contact-content">
-                <h2 className="title">Contato</h2>
-                <p>Entre em contato e faça seu pedido!</p>
+      <section className="contact background2" id="contact">
+        <div className="container-alt contact-content">
+          <h2 className="title">Contato</h2>
+          <p>Entre em contato e faça seu pedido!</p>
 
-                <ul className='contact-list'>
-                    <li className='contact-card whats'><FaWhatsapp className="whatsapp"/>(31) 97128-4049</li>
-                    <li className='contact-card insta'><FaInstagram className="instagram"/>glaisebolos</li>
-                    <li className='contact-card phone'><FaPhoneAlt className="telephone"/>(31) 97128-4049</li>
-                </ul>
+          <ul className="contact-list">
+            <li className="contact-card whats">
+              <FaWhatsapp className="whatsapp" />
+              (31) 97128-4049
+            </li>
+            <li className="contact-card insta">
+              <FaInstagram className="instagram" />
+              glaisebolos
+            </li>
+            <li className="contact-card phone">
+              <FaPhoneAlt className="telephone" />
+              (31) 97128-4049
+            </li>
+          </ul>
+        </div>
+
+        <div className="map-content container" id='adress'>
+          <h2 className="title">Localização</h2>
+          <p>Encontre-nos facilmente e aproveite o melhor da confeitaria.</p>
+          <div className="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d234.4066297490251!2d-44.13650251803301!3d-19.945208411019685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6c1b5079ccb7f%3A0xbdd8ab2bb4a8f7c3!2sGlaise%20Bolos!5e0!3m2!1spt-BR!2sbr!4v1741010625629!5m2!1spt-BR!2sbr"
+              className="map"
+              width="600"
+              height="450"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <div className="adress">
+            <FaMapMarkerAlt />
+            <div className="adress-content">
+              <p>R. Tomás Gonzaga, 18 - Amarante, Betim - MG, 32676-008</p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+
+      <footer className="footer background-alt">
+        <div className="container footer-content">
+          <div className="logo">
+            <img src="/glaise-bolos.svg" alt="Glaise Bolos" />
+          </div>
+
+
+          <nav className='nav-menu'>
+            <ul className='menu'>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li><a href="#adress">Localização</a></li>
+            </ul>
+        </nav>
+        </div>
+        <p>Todos os Direitos Reservados © Glaise Bolos 2025</p>
+      </footer>
     </>
   );
 }

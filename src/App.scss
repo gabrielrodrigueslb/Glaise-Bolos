@@ -43,10 +43,12 @@ ul, li {
 .container {
   max-width: 1360px;
   margin: 0 auto;
+  padding-inline: 20px;
 }
 .container-alt {
   max-width: 980px;
   margin: 0 auto;
+  padding-inline: 30px;
 }
 
 .background {
@@ -138,5 +140,74 @@ ul, li {
     background: $colorPrimary;
     margin-bottom: 13px;
     margin-left: 5px;
+  }
+}
+
+
+@media (max-width: 700px){
+  .title {
+    font-size: 1.5rem;
+
+    &::after {
+      width: 5px;
+      height: 5px;
+      margin-bottom: 10px;
+      margin-left: 3px;
+    }
+  }
+  .title-alt {
+    font-size: 1.5rem;
+
+    &::after {
+      width: 5px;
+      height: 5px;
+      margin-bottom: 10px;
+      margin-left: 3px;
+    }
+  }
+  .btn {
+    padding: 14px;
+  }
+
+  .btn-2 {
+    padding: 14px 50px;
+    font-size: 1rem;
+  }
+  p{
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 420px){
+  .title {
+    font-size: 1.5rem;
+
+    &::after {
+      width: 5px;
+      height: 5px;
+      margin-bottom: 10px;
+      margin-left: 3px;
+    }
+  }
+  .title-alt {
+    font-size: 1.5rem;
+
+    &::after {
+      width: 5px;
+      height: 5px;
+      margin-bottom: 10px;
+      margin-left: 3px;
+    }
+  }
+  .btn {
+    padding: 14px;
+  }
+
+  .btn-2 {
+    padding: 14px 40px;
+    text-wrap: nowrap;
+    font-size: .8rem;
+  }
+  p{
+    font-size: 0.875rem;
   }
 }

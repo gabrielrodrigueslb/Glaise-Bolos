@@ -3,12 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 
 
-import './Carrosel.scss'
+import './CarroselMobile.scss'
 import "swiper/css";
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-export default function Carrosel() {
+export default function CarroselMobile() {
 
     return (
         <Swiper
@@ -23,12 +23,12 @@ export default function Carrosel() {
             clickable: true,
           }}
           loop={true}
-          className="mySwiper"
+          className="mySwiper-mobile"
           
         >
-          <SwiperSlide><img src="/brigadeiro.png" alt="Banner 1" /></SwiperSlide>
-          <SwiperSlide><img src="/brigadeiro.png" alt="Banner 2" /></SwiperSlide>
-          <SwiperSlide><img src="/brigadeiro.png" alt="Banner 3" /></SwiperSlide>
+          <SwiperSlide><img src="/Banner-mobile2.png" alt="Banner 1" /></SwiperSlide>
+          <SwiperSlide><img src="/Banner-mobile2.png" alt="Banner 1" /></SwiperSlide>
+          <SwiperSlide><img src="/Banner-mobile2.png" alt="Banner 1" /></SwiperSlide>
         </Swiper>
       );
 }
