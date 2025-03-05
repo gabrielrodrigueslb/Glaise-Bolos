@@ -1,48 +1,68 @@
+/* eslint-disable no-unused-vars */
 import {
   FaWhatsapp,
   FaInstagram,
   FaPhoneAlt,
   FaMapMarkerAlt,
 } from 'react-icons/fa';
-
+import { motion } from "framer-motion";
 import Header from '../components/Header/Header';
 import Carrosel from '../components/Carrossel/Carrosel';
 import Servicos from '../components/Servicos/Servicos';
 
 import './Home.scss';
 import CarroselMobile from '../components/CarrosselMobile/CarroselMobile';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
     <>
       <main className="background main">
-          <Header />
-          <div className='container'>
+        <Header />
 
-
-          <Carrosel className="container"/>
+        <motion.div
+          initial={{ opacity: 0}} // Começa invisível e abaixo
+          animate={{ opacity: 1}} // Anima para visível e posição normal
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <div className="container">
+            <Carrosel className="container" />
           </div>
-          <CarroselMobile/>
+          <CarroselMobile />
+        </motion.div>
+
         <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }} 
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <section className="services-list">
+              <Servicos
+                icon="/icon-brigadeiro.svg"
+                title="Doces"
+                text="Sabores irresistíveis, preparados com ingredientes selecionados."
+              />
+              <Servicos
+                icon="/icon-bolo-decorado.svg"
+                title="Bolos Decorados"
+                text="Arte e sabor em cada detalhe, feitos sob medida para seus momentos especiais."
+              />
+              <Servicos
+                icon="/icon-salgados.svg"
+                title="Salgados"
+                text="Salgados crocantes e recheados, ideais para qualquer evento."
+              />
+            </section>
+          </motion.div>
 
-          <section className="services-list">
-            <Servicos
-              icon="/icon-brigadeiro.svg"
-              title="Doces"
-              text="Sabores irresistíveis, preparados com ingredientes selecionados."
-            />
-            <Servicos
-              icon="/icon-bolo-decorado.svg"
-              title="Bolos Decorados"
-              text="Arte e sabor em cada detalhe, feitos sob medida para seus momentos especiais."
-            />
-            <Servicos
-              icon="/icon-salgados.svg"
-              title="Salgados"
-              text="Salgados crocantes e recheados, ideais para qualquer evento."
-            />
-          </section>
-
+          <motion.div initial={{ opacity: 0, y:100}}
+          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }} 
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}>
           <section className="container-alt galeria" id="galeria">
             <h2 className="title">Galeria de fotos</h2>
             <p>
@@ -60,12 +80,16 @@ export default function Home() {
                 <img src="/bolo-batizado.png" alt="Bolo Batizado" />
               </div>
             </div>
-            <button className="btn-2">Ver mais modelos</button>
+            <Link to='/themes' className="btn-2">Ver mais modelos</Link>
           </section>
+          </motion.div>
+
+
         </div>
       </main>
 
-      <section className="about background-alt" id='about'>
+      <section className="about background-alt" id="about">
+      
         <div className="container-alt about-content">
           <h2 className="title-alt">Sobre nós</h2>
 
@@ -116,7 +140,7 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="map-content container" id='adress'>
+        <div className="map-content container" id="adress">
           <h2 className="title">Localização</h2>
           <p>Encontre-nos facilmente e aproveite o melhor da confeitaria.</p>
           <div className="map-container">
@@ -145,15 +169,22 @@ export default function Home() {
             <img src="/glaise-bolos.svg" alt="Glaise Bolos" />
           </div>
 
-
-          <nav className='nav-menu'>
-            <ul className='menu'>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#contact">Contato</a></li>
-                <li><a href="#adress">Localização</a></li>
+          <nav className="nav-menu">
+            <ul className="menu">
+              <li>
+                <a href="#galeria">Galeria</a>
+              </li>
+              <li>
+                <a href="#about">Sobre</a>
+              </li>
+              <li>
+                <a href="#contact">Contato</a>
+              </li>
+              <li>
+                <a href="#adress">Localização</a>
+              </li>
             </ul>
-        </nav>
+          </nav>
         </div>
         <p>Todos os Direitos Reservados © Glaise Bolos 2025</p>
       </footer>

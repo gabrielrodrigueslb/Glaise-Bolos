@@ -1,6 +1,7 @@
 import { IoSearchSharp, IoMenuSharp, IoCloseOutline } from 'react-icons/io5';
 import { useState } from 'react';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
@@ -24,9 +25,9 @@ export default function Header() {
           </ul>
         </nav>
 
-        <a className="search btn">
+        <Link to='themes' className="search btn">
           <IoSearchSharp />
-        </a>
+        </Link>
 
         <a onClick={toggleMenu} className="hamburguer btn">
           <IoMenuSharp />

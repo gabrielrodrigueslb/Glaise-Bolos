@@ -50,6 +50,11 @@ ul, li {
   margin: 0 auto;
   padding-inline: 30px;
 }
+.container-alt2 {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-inline: 30px;
+}
 
 .background {
   background: linear-gradient(180deg, #FFFFFF 0%, #FFFBEB 100%);
@@ -62,7 +67,7 @@ ul, li {
 }
 
 .btn {
-  padding: 18px;
+  padding: .96rem;
   display: flex;
   align-items: center;
   justify-content: center;

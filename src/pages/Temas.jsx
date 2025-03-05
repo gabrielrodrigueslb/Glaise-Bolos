@@ -1,10 +1,45 @@
-import React from 'react'
-import Header from '../components/Header/Header'
+import './Temas.scss';
+import Header from '../components/Header/Header';
+import HeaderAlt from '../components/HeaderAlt/HeaderAlt';
+import ThemeCard from '../components/ThemeCard/ThemeCard';
+import { useState } from 'react';
+import themes from '../api/api';
+
 
 export default function Temas() {
+
+let [theme, setTheme] =  useState(themes);
+
+
+
+console.log(theme)
+
+
+
   return (
-    <div><Header/>
-    
-    </div>
-  )
+    <>
+      <HeaderAlt btnReturn='/'/>
+      <main className="themes">
+        <h1 className="title container">Temas</h1>
+        <section className="themes-list container">
+
+          {theme.length === 0 ? (<p>Carregando...</p>) : (theme.map((tema) => (
+            <ThemeCard 
+            key={tema.id}
+            id={tema.id}
+            name={tema.name}
+            color={tema.color}
+            img={tema.img}
+
+            />
+            
+
+          )))}
+            
+              
+          
+        </section>
+      </main>
+    </>
+  );
 }
