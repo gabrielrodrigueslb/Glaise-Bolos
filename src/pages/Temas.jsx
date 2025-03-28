@@ -1,18 +1,24 @@
+
 import './Temas.scss';
-import Header from '../components/Header/Header';
+
 import HeaderAlt from '../components/HeaderAlt/HeaderAlt';
 import ThemeCard from '../components/ThemeCard/ThemeCard';
-import { useState } from 'react';
-import themes from '../api/api';
+import { useEffect, useState } from 'react';
+import { getTemas } from '../api/apiService';
 
 
 export default function Temas() {
 
-let [theme, setTheme] =  useState(themes);
+let [theme, setTheme] =  useState([]);
 
+useEffect(() => {
+  const fetchThemes = async () => {
+    const response = await getTemas();
+    setTheme(response);
+  };
 
-
-console.log(theme)
+  fetchThemes();
+})
 
 
 

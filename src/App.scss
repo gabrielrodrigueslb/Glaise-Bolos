@@ -71,16 +71,16 @@ ul, li {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: $colorWhite;
-  box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 20%);
+  background: $colorPrimary;
+  box-shadow: 0px 2px 8px 0px rgba(99, 99, 99, 40%);
   border-radius: 50%;
-  color: $colorPrimary;
+  color: $colorWhite;
   cursor: pointer;
   transition: 0.1s;
   &:hover {
-    color: $colorWhite;
+    color: $colorPrimary;
     transition: 0.1s;
-    background: $colorPrimary;
+    background: $colorWhite;
   }
 }
 .btn-2 {

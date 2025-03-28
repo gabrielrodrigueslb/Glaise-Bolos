@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
@@ -6,7 +7,8 @@ import PageTransition from './components/PageTransition';
 import Temas from './pages/Temas';
 import Home from './pages/Home';
 import Results from './pages/Results/Results';
-import themes from './api/api';
+import DetailsCake from './pages/DetailCake/DetailsCake';
+
 
 
 function App() {
@@ -29,6 +31,14 @@ function App() {
               element={
                 <PageTransition>
                   <Results />
+                </PageTransition>
+              }
+            />
+            <Route
+              path="details/:id"
+              element={
+                <PageTransition>
+                  <DetailsCake />
                 </PageTransition>
               }
             />
